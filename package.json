@@ -1,0 +1,43 @@
+{
+  "name": "reactoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-loader": "^1.0.2",
+    "file-loader": "^1.1.11",
+    "node-sass": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sass-loader": "^6.0.7",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "scripts": {
+    "test": "webpack-dev-server --mode development --open",
+    "dev": "npm test",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC"
+}
