@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack')
 /*
 * Note if using Express Server
 * For now there is no way to have HMR and file extract on webpack 4
@@ -7,19 +7,22 @@ const path = require('path');
 */
 
 module.exports = {
+  mode: 'development',
   entry: {
-    style: './src/index.scss',
-    script: './src/index.js',
+    /*style: './src/index.scss',*///For Build
+    script: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js'],
   },
   output: {
     filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   module: {
     rules: [
       { // This extracts to a css file
         test: /\.scss$/,
         use: [
-          {
+        /*  {// For dev-server or production build
             loader: 'file-loader',
             options: {
               name: 'style.css',
@@ -29,7 +32,11 @@ module.exports = {
             options: {
               publicPath: './',
             },
-          }, {
+          }, */
+          {
+            loader: 'style-loader'
+          },
+          {
             loader: 'css-loader',
           }, {
             loader: 'sass-loader',
@@ -54,4 +61,7 @@ module.exports = {
   devServer: { // Base for webpack-dev-server
     contentBase: './dist',
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
