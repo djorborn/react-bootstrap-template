@@ -1,0 +1,2 @@
+# React Bootstrap Template
+this is my diy react with Bootstrap boilerplate. There are two branches, the master uses **webpack-dev-middleware** and extracts css to its own file. The second branch **express-server** uses express.js server with **webpack-dev-middleware** and **webpack-hot-middleware** for hot module replacement. Currently there is no webpack 4 css extractor that works with HMR so this branch does extract css for development.
